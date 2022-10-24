@@ -310,7 +310,7 @@ try {
             if (!buttons) {
                 throw '无法找到马上抢按钮，任务失败'
             }
-            for (let i = 0; i < 5 && count > buttons.length; i++) {
+            for (let i = 0; i < 10 && count > buttons.length; i++) {
                 console.log('商品数量不足，向下翻页')
                 scrollDown()
                 sleep(2000)
