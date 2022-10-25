@@ -59,7 +59,7 @@ if (autoMute) {
 
 console.show()
 showVersion()
-console.log('开始完成喵糖任务...')
+console.log('开始完成喵果任务...')
 console.log('按音量下键停止')
 
 device.keepScreenDim(60 * 60 * 1000)
@@ -140,7 +140,7 @@ try {
                     sleep(8000)
                     return findTask()
                 }
-                if (!(taskName.match(/淘金币|提醒|话费|斗地主|消消乐|流浪猫|开88|扔喵糖|占领|邀请|登录|组队|参与|施肥|浇水|特价版|小鸡|消除|穿搭|森林|点淘|人生|我的淘宝|庄园|支付宝/) || content.match(/小互动/))) {
+                if (!(taskName.match(/淘金币|提醒|话费|斗地主|消消乐|流浪猫|开88|扔喵果|占领|邀请|登录|组队|参与|施肥|浇水|特价版|小鸡|消除|穿搭|森林|点淘|人生|我的淘宝|庄园|支付宝/) || content.match(/小互动/))) {
                     return [taskName, jumpButtons[i]]
                 }
             }
