@@ -186,6 +186,13 @@ try {
                 console.log('跳过互动任务')
                 break
             }
+            if (text('宝贝口袋').exists()) {
+                let cart = text('购物车').findOnce()
+                let x = cart.bounds().right
+                let y = cart.bounds().top
+                console.log('关闭直播购物车')
+                click(x, y-100)
+            }
             sleep(500)
             finish_c++
         }
