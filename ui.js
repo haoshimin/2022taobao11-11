@@ -177,7 +177,7 @@ ui.layout(
                             <card w="{{parseInt(deviceWidth*0.95) + 'px'}}" h="auto"
                                 margin="5" cardCornerRadius="15dp" cardBackgroundColor="#f5f5f5" gravity="left">
                                 <vertical gravity="center_vertical">
-                                    <text gravity="center" text="淘宝任务" size="20dp" color="#FF6D31" />
+                                    <text gravity="center" text="淘宝任务（喵果已上线）" size="20dp" color="#FF6D31" />
                                     <horizontal gravity="center">
                                         <button id="startTask" text="喵果总动员" />
                                         <button id="energyTask" text="能量任务" />
@@ -329,8 +329,8 @@ ui.jd3.click(function () { openJdUrl('https://u.jd.com/kCBuyG7') })
 ui.jd4.click(function () { openJdUrl('https://u.jd.com/kKBsW0H') })
 
 ui.startTask.click(function () {
-    alert('淘宝活动尚未开始', '敬请关注脚本更新')
-    // engines.execScriptFile('./start.js')
+    // alert('淘宝活动尚未开始', '敬请关注脚本更新')
+    engines.execScriptFile('./start.js')
 })
 
 ui.energyTask.click(function () {
