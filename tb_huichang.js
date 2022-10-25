@@ -126,10 +126,19 @@ try {
         if (!textContains('task_detail').findOne(8000)) {
             console.log('默认方式打开失败，二次尝试')
             console.log('首先检测弹窗')
-            for (let i = 0; i < 2 && text('关闭').findOne(2000); i++) { // 关闭弹窗
-                console.log('检测到弹窗，关闭')
-                click('关闭')
-                sleep(2000)
+            try {
+                idContains('J_wfdlgwrap_6').findOnce().child(0).click()
+                sleep(1000)
+            } catch (err) {
+                console.log(err)
+                console.log('领红包弹窗关闭失败。此问题不影响运行')
+            }
+            try {
+                idContains('CLOSE').findOnce().click()
+                sleep(1000)
+            } catch (err) {
+                console.log(err)
+                console.log('其他弹窗关闭失败。此问题不影响运行')
             }
             console.log('出现未能自动关闭的弹窗请手动关闭')
             sleep(2000)
@@ -311,7 +320,9 @@ try {
                 throw '无法找到马上抢按钮，任务失败'
             }
             for (let i = 0; i < 10 && count > buttons.length; i++) {
-                console.log('商品数量不足，向下翻页')
+                console.log('商品数量不足，向下翻页', buttons.length)
+                scrollDown()
+                sleep(2000)
                 scrollDown()
                 sleep(2000)
                 buttons = textContains('item_pic').find()
