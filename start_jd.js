@@ -335,7 +335,7 @@ function joinTask() {
             check = anchor.parent().child(anchor.indexInParent() + 2)
         }
 
-        log("最终[确认授权]前面选项框坐标为:", check);
+        console.log("最终[确认授权]前面选项框坐标为:", check.bounds());
         let x = check.bounds().centerX()
         let y = check.bounds().centerY()
 
