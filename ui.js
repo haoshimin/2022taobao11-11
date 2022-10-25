@@ -1,6 +1,6 @@
 "ui";
 
-const VERSION = '20221111-K'
+const VERSION = '20221111-L'
 
 const deviceWidth = device.width
 const deviceHeight = device.height
@@ -179,7 +179,7 @@ ui.layout(
                                 <vertical gravity="center_vertical">
                                     <text gravity="center" text="淘宝任务" size="20dp" color="#FF6D31" />
                                     <horizontal gravity="center">
-                                        <button id="startTask" text="主活动" />
+                                        <button id="startTask" text="喵果总动员" />
                                         <button id="energyTask" text="能量任务" />
                                         <button id="huichangTask" text="会场任务" />
                                         <button id="tbHb1" text="淘宝双十一红包" />
