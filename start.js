@@ -130,7 +130,14 @@ try {
                 content = jumpButtons[i].parent().child(0).child(1).child(0).text()
             } catch (err) {
                 console.log(err)
-                continue
+                console.log('使用第二种方法尝试')
+                try {
+                    content = jumpButtons[i].parent().child(0).child(1).text()
+                    console.log('成功，继续任务')
+                }
+                catch(err) {
+                    continue
+                }
             }
             if (taskName) {
                 if (taskName.match(/签到/)) {
