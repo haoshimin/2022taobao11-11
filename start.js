@@ -167,7 +167,7 @@ try {
         // textMatches(/.*浏览得奖励.*/).findOne(15000) // 等待开始
         sleep(5000)
         let finish_c = 0
-        while (finish_c < 60) { // 0.5 * 60 = 30 秒，防止死循环
+        while (finish_c < 300) { // 0.1 * 300 = 30 秒，防止死循环
             if (textMatches(/.*下拉浏览.*/).exists()) {
                 console.log('进行模拟滑动')
                 swipe(device.width / 2, device.height - 200, device.width / 2 + 20, device.height - 500, 2000)
@@ -193,7 +193,7 @@ try {
                 console.log('关闭直播购物车')
                 click(x, y-100)
             }
-            sleep(500)
+            sleep(100)
             finish_c++
         }
 
