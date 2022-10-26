@@ -333,6 +333,23 @@ function joinTask() {
         } else {
             let anchor = textContains('*****').findOnce()
             check = anchor.parent().child(anchor.indexInParent() + 2)
+            if (! check.bounds().top >= anchor.bounds().bottom) {
+                console.log('使用第二种方法获取控件')
+                let check1 = anchor.parent().children().findOne(filter(function (w) {
+                    if (w.className().match(/ImageView/) && w.bounds().top >= anchor.bounds().bottom) {
+                        return true
+                    } else {
+                        return false
+                    }
+                }))
+                if (!check1) {
+                    console.log('第二种方法也无法确认授权勾选框，失败。返回。')
+                    return false
+                } else {
+                    check = check1
+                    console.log('成功，继续')
+                }
+            }
         }
 
         console.log("最终[确认授权]前面选项框坐标为:", check.bounds());
