@@ -1,6 +1,6 @@
 "ui";
 
-const VERSION = '20221111-M'
+const VERSION = '20221111-N'
 
 const deviceWidth = device.width
 const deviceHeight = device.height
@@ -107,7 +107,7 @@ ui.layout(
                                         <card marginBottom="10dp" h="auto" w="*" cardBackgroundColor="#f5f5f5" id="tb1">
                                             <vertical>
                                                 <img layout_gravity="center" src="file://res/activity/tb1.jpeg" />
-                                                <text gravity="center" textSize="16dp">淘宝预售能量红包会场</text>
+                                                <text gravity="center" textSize="16dp">淘宝预售单单开奖会场（能量红包已下线）</text>
                                             </vertical>
                                         </card>
                                         <card marginBottom="10dp" h="auto" w="*" cardBackgroundColor="#f5f5f5" id="tb2">
@@ -178,9 +178,10 @@ ui.layout(
                                 margin="5" cardCornerRadius="15dp" cardBackgroundColor="#f5f5f5" gravity="left">
                                 <vertical gravity="center_vertical">
                                     <text gravity="center" text="淘宝任务（喵果已上线）" size="20dp" color="#FF6D31" />
+                                    <text gravity="center">能量红包任务已经结束了</text>
                                     <horizontal gravity="center">
                                         <button id="startTask" text="喵果总动员" />
-                                        <button id="energyTask" text="能量任务" />
+                                        {/* <button id="energyTask" text="能量任务" /> */}
                                         <button id="huichangTask" text="会场任务" />
                                         <button id="tbHb1" text="淘宝双十一红包" />
                                     </horizontal>
@@ -335,9 +336,9 @@ ui.startTask.click(function () {
     engines.execScriptFile('./start.js')
 })
 
-ui.energyTask.click(function () {
-    engines.execScriptFile('./tb_nengliang.js')
-})
+// ui.energyTask.click(function () {
+//     engines.execScriptFile('./tb_nengliang.js')
+// })
 
 ui.huichangTask.click(function () {
     engines.execScriptFile('./tb_huichang.js')
