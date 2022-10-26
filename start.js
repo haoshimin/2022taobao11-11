@@ -135,7 +135,7 @@ try {
                     content = jumpButtons[i].parent().child(0).child(1).text()
                     console.log('成功，继续任务')
                 }
-                catch(err) {
+                catch (err) {
                     continue
                 }
             }
@@ -196,7 +196,7 @@ try {
                 let x = cart.bounds().right
                 let y = cart.bounds().top
                 console.log('关闭直播购物车')
-                click(x, y-100)
+                click(x, y - 100)
             }
             sleep(100)
             finish_c++
@@ -207,17 +207,17 @@ try {
             sleep(18000)
         }
 
-        if (finish_c > 49) {
+        if (finish_c > 299) {
             console.log('未检测到任务完成标识。返回。')
             // console.log('如果你认为这是一个bug请截图反馈。')
             // console.log('一般情况下，二次运行脚本即可。')
             // console.log('请手动切换回主页面')
             // device.cancelKeepingAwake()
             // quit()
-            if (!textContains('果仓等级').exists()) {
+            if (textContains('果仓等级').exists()) {
                 console.log('店铺已主动返回，继续任务')
                 return
-            } 
+            }
             back()
             sleep(1000)
             // TODO: 返回检测
