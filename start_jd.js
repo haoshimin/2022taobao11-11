@@ -541,8 +541,13 @@ function doTask(tButton, tText, tTitle) {
                 return tFlag
             } else {
                 console.log('未能进入组队')
-                console.log('组队任务失败，避免卡死，退出')
-                quit()
+                if (findTextDescMatchesTimeout(/累计任务奖励/, 1000)) {
+                    console.log('当前仍在任务列表，返回')
+                    return true
+                } else {
+                    console.log('组队任务未检测到页面标识，视为已完成')
+                    tFlag = false
+                }
             }
         }
     } else {
