@@ -214,10 +214,14 @@ try {
             // console.log('请手动切换回主页面')
             // device.cancelKeepingAwake()
             // quit()
+            if (!textContains('果仓等级').exists()) {
+                console.log('店铺已主动返回，继续任务')
+                return
+            } 
             back()
             sleep(1000)
             // TODO: 返回检测
-            if (!textContains('果仓等级').findOne(5000)) {
+            if (!textContains('果仓等级').findOne(8000)) {
                 console.log('似乎没有返回，二次尝试')
                 back()
             }
