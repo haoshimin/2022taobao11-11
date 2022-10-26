@@ -165,15 +165,20 @@ try {
         // }
 
         // textMatches(/.*浏览得奖励.*/).findOne(15000) // 等待开始
-        sleep(5000)
         let finish_c = 0
+        let countdown = 0
+        console.log('开始检测任务完成，部分控件无法检测，会在30秒后自动返回，请耐心等待。')
         while (finish_c < 300) { // 0.1 * 300 = 30 秒，防止死循环
             if (textMatches(/.*下拉浏览.*/).exists()) {
                 console.log('进行模拟滑动')
                 swipe(device.width / 2, device.height - 200, device.width / 2 + 20, device.height - 500, 2000)
             }
-            let finish_reg = /.*任务.*?完成[\s\S]*?|.*失败.*|.*上限.*|.*开小差.*|.*喵果已发放[\s\S]*/
+            let finish_reg = /.*任务.*?完成[\s\S]*?|.*失败.*|.*上限.*|.*开小差.*|.*喵果已发放[\s\S]*|.*下单可获得[\s\S]*/
             if (textMatches(finish_reg).exists() || descMatches(finish_reg).exists()) { // 等待已完成出现，有可能失败
+                break
+            }
+            if (countdown == 0 && idContains('countdown').exists()) {
+                countdown = 1
                 break
             }
             if (textMatches(/.*休息会呗.*/).exists()) {
@@ -195,6 +200,11 @@ try {
             }
             sleep(100)
             finish_c++
+        }
+
+        if (countdown) {
+            console.log('出现图片类型标识，使用新方法完成，20秒后视为任务完成，自动返回')
+            sleep(20000)
         }
 
         if (finish_c > 49) {
