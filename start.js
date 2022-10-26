@@ -203,8 +203,8 @@ try {
         }
 
         if (countdown) {
-            console.log('出现图片类型标识，使用新方法完成，20秒后视为任务完成，自动返回')
-            sleep(20000)
+            console.log('出现图片类型标识，使用新方法完成，18秒后视为任务完成，自动返回')
+            sleep(18000)
         }
 
         if (finish_c > 49) {
