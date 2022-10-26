@@ -383,7 +383,7 @@ function joinTask() {
 // 浏览商品和加购的任务，cart参数为是否加购的flag
 function itemTask(cart) {
     console.log('等待进入商品列表...')
-    if (!textContains('当前页').findOne(10000)) {
+    if (!textContains('当前页').findOne(20000)) {
         console.log('未能进入商品列表。')
         return false
     }
